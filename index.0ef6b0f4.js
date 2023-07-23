@@ -19,5 +19,5 @@ let t;"use strict";var e,o,n,i,r,a="undefined"!=typeof globalThis?globalThis:"un
                
            </div>
        </a>
-       `).join("")}async function eQ(e,o){for(entry of e)if(entry.isIntersecting)try{eZ+=1;let{hits:e,totalHits:o}=await e$(t,eZ);eq.formContainer.insertAdjacentHTML("beforeend",eG(e)),(0,eH.Loading).arrows(),eV.refresh(),0===e.length&&((0,eY.Report).failure("Ups","We're sorry, but you've reached the end of search results."),eq.upButton.style.visibility="visible")}catch(t){console.log(t),eq.upButton.style.visibility="visible",(0,eY.Report).failure("Ups","We're sorry, but you've reached the end of search results.")}finally{(0,eH.Loading).remove()}}
-//# sourceMappingURL=index.72799657.js.map
+       `).join("")}async function eQ(e,o){for(let o of e)if(o.isIntersecting)try{eZ+=1;let{hits:e,totalHits:o}=await e$(t,eZ);eq.formContainer.insertAdjacentHTML("beforeend",eG(e)),(0,eH.Loading).arrows(),eV.refresh(),0===e.length&&((0,eY.Report).failure("Ups","We're sorry, but you've reached the end of search results."),eq.upButton.style.visibility="visible")}catch(t){console.log(t),eq.upButton.style.visibility="visible",(0,eY.Report).failure("Ups","We're sorry, but you've reached the end of search results.")}finally{(0,eH.Loading).remove()}}
+//# sourceMappingURL=index.0ef6b0f4.js.map
