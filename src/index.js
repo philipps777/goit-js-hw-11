@@ -10,7 +10,7 @@ const elements = {
   input: document.querySelector('input'),
   formContainer: document.querySelector('.gallery'),
   addField: document.querySelector('.submit'),
-  upButton: document.querySelector('.upButton'),
+  upButton: document.querySelector('.round-button'),
   guardJs: document.querySelector('.for_upButton'),
 };
 

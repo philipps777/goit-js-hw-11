@@ -38,12 +38,14 @@
   align-content: space-between;
 }
 
-.upButton {
+.round-button {
+  width: 100px;
+  height: 100px;
   visibility: hidden;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 50%;
   border: none;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(242, 37, 37);
   color: azure;
   animation: pulse 2s infinite;
 }
