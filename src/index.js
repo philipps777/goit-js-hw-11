@@ -56,7 +56,7 @@ async function onFormSubmit(e) {
     e.preventDefault();
     Loading.arrows();
     inputValue = elements.input.value.trim();
-    const isValidInput = inputValue; //^[a-zA-Z0-9\s]+$/.test(inputValue);
+    const isValidInput = /^[a-zA-Z0-9\s]+$/.test(inputValue);
     if (!isValidInput || inputValue === '') {
       return Report.warning(
         'Invalid input',
