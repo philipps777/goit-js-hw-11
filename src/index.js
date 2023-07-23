@@ -86,8 +86,9 @@ function createMarkup(arr) {
         comments,
         downloads,
       }) =>
-        `<a class="gallery__link" href=${largeImageURL}>
-             <img class="gallery__image" width="350"src=${webformatURL} alt=${tags} loading="lazy" />
+        `<div class="gallery__item"> <!-- Исправлено здесь -->
+          <a class="gallery__link" href=${largeImageURL}>
+             <img class="gallery__image" width="350" src=${webformatURL} alt=${tags} loading="lazy" />
                    <div class="info__item">
                        <b>Likes</b>
                        ${likes}
@@ -104,9 +105,8 @@ function createMarkup(arr) {
                        <b>Downloads</b>
                        ${downloads}
                    </div>
-               
-           </div>
-       </a>
+          </a> <!-- Закрытие тега <a> -->
+         </div> <!-- Закрытие тега <div class="gallery__item"> -->
        `
     )
     .join('');
@@ -152,4 +152,3 @@ async function handlerPagination(entries, observer) {
     }
   }
 }
-//
