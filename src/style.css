@@ -1,0 +1,66 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(127, 14, 147, 0.931);
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.gallery {
+  text-decoration: none;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.gallery__image:hover {
+  transform: scale(1.03);
+}
+.gallery__image {
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+  cursor: zoom-in;
+}
+.gallery__link {
+  display: block;
+  text-decoration: none;
+  color: #141313;
+}
+.gallery__link:hover {
+  color: #d900ff;
+}
+
+.gallery__item {
+  display: grid;
+
+  align-content: space-between;
+}
+
+.upButton {
+  visibility: hidden;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(255, 0, 0);
+  color: azure;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Начальный размер (без увеличения) */
+  }
+  50% {
+    transform: scale(1.2); /* Максимальный размер (увеличение на 20%) */
+  }
+  100% {
+    transform: scale(1); /* Возврат к исходному размеру */
+  }
+}
+.for_upButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
