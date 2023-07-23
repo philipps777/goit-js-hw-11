@@ -18,7 +18,7 @@ const BASE_URL = 'https://pixabay.com/api/';
 
 async function fetchImages(inputValue, page) {
   const params = new URLSearchParams({
-    key: 'key=38393469-c3ed0194fa41e0d5130fcf9c2',
+    key: '38393469-c3ed0194fa41e0d5130fcf9c2',
     q: inputValue,
     image_type: 'photo',
     orientation: 'horizontal',
@@ -86,9 +86,8 @@ function createMarkup(arr) {
         comments,
         downloads,
       }) =>
-        `<div class="gallery__item"> <!-- Исправлено здесь -->
-          <a class="gallery__link" href=${largeImageURL}>
-             <img class="gallery__image" width="350" src=${webformatURL} alt=${tags} loading="lazy" />
+        `<a class="gallery__link" href=${largeImageURL}>
+             <img class="gallery__image" width="350"src=${webformatURL} alt=${tags} loading="lazy" />
                    <div class="info__item">
                        <b>Likes</b>
                        ${likes}
@@ -105,8 +104,9 @@ function createMarkup(arr) {
                        <b>Downloads</b>
                        ${downloads}
                    </div>
-          </a> <!-- Закрытие тега <a> -->
-         </div> <!-- Закрытие тега <div class="gallery__item"> -->
+               
+           </div>
+       </a>
        `
     )
     .join('');
@@ -152,3 +152,4 @@ async function handlerPagination(entries, observer) {
     }
   }
 }
+//
