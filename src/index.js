@@ -121,7 +121,7 @@ function scrolTop() {
 }
 
 async function handlerPagination(entries, observer) {
-  for (entry of entries) {
+  for (const entry of entries) {
     if (entry.isIntersecting) {
       try {
         page += 1;
