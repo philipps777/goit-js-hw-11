@@ -117,7 +117,7 @@ function scrolTop() {
     top: 0,
     behavior: 'smooth',
   });
-  upButton.style.visibility = 'hidden';
+  elements.upButton.style.visibility = 'hidden';
 }
 
 async function handlerPagination(entries, observer) {
