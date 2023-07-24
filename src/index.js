@@ -62,7 +62,7 @@ async function onFormSubmit(e) {
     e.target.reset();
   } catch (error) {
     Report.warning('Invalid input', 'Please enter a valid search query.');
-    // console.log(error);
+    console.log(error);
   } finally {
     Loading.remove();
   }
