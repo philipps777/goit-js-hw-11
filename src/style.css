@@ -61,7 +61,7 @@
     transform: scale(1); /* Возврат к исходному размеру */
   }
 }
-.for_upButton {
+.for-upButton {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;

@@ -11,8 +11,10 @@ const elements = {
   formContainer: document.querySelector('.gallery'),
   addField: document.querySelector('.submit'),
   upButton: document.querySelector('.round-button'),
-  guardJs: document.querySelector('.for_upButton'),
+  guardJs: document.querySelector('.for-upButton'),
 };
+
+const inputValue = elements.input.value;
 
 const BASE_URL = 'https://pixabay.com/api/';
 
@@ -44,15 +46,13 @@ let observer = new IntersectionObserver(handlerPagination, options);
 
 elements.upButton.addEventListener('click', scrolTop);
 
-let inputValue;
-
 let page = 1;
 
 async function onFormSubmit(e) {
   try {
     e.preventDefault();
     Loading.arrows();
-    inputValue = elements.input.value.trim();
+    inputValue.trim();
 
     observer.observe(elements.guardJs);
     const { hits, totalHits } = await fetchImages(inputValue);
@@ -62,7 +62,7 @@ async function onFormSubmit(e) {
     e.target.reset();
   } catch (error) {
     Report.warning('Invalid input', 'Please enter a valid search query.');
-    console.log(error);
+    // console.log(error);
   } finally {
     Loading.remove();
   }
@@ -145,4 +145,3 @@ async function handlerPagination(entries, observer) {
     }
   }
 }
-//
