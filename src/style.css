@@ -15,37 +15,35 @@
   justify-content: center;
   gap: 20px;
 }
-.gallery-image:hover {
+.gallery__image:hover {
   transform: scale(1.03);
 }
-.gallery-image {
+.gallery__image {
   object-fit: cover;
   transition: transform var(--animation-duration) var(--timing-function);
   cursor: zoom-in;
 }
-.gallery-link {
+.gallery__link {
   display: block;
   text-decoration: none;
   color: #141313;
 }
-.gallery-link:hover {
+.gallery__link:hover {
   color: #d900ff;
 }
 
-.gallery-item {
+.gallery__item {
   display: grid;
 
   align-content: space-between;
 }
 
-.round-button {
-  width: 100px;
-  height: 100px;
+.upButton {
   visibility: hidden;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 10px;
   border: none;
-  background-color: rgb(242, 37, 37);
+  background-color: rgb(255, 0, 0);
   color: azure;
   animation: pulse 2s infinite;
 }
@@ -61,7 +59,7 @@
     transform: scale(1); /* Возврат к исходному размеру */
   }
 }
-.for-upButton {
+.for_upButton {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;

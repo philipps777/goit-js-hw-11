@@ -10,8 +10,8 @@ const elements = {
   input: document.querySelector('input'),
   formContainer: document.querySelector('.gallery'),
   addField: document.querySelector('.submit'),
-  upButton: document.querySelector('.round-button'),
-  guardJs: document.querySelector('.for-upButton'),
+  upButton: document.querySelector('.upButton'),
+  guardJs: document.querySelector('.for_upButton'),
 };
 
 const BASE_URL = 'https://pixabay.com/api/';
@@ -53,7 +53,13 @@ async function onFormSubmit(e) {
     e.preventDefault();
     Loading.arrows();
     inputValue = elements.input.value.trim();
-
+    // const isValidInput = /^[a-zA-Z0-9\s]+$/.test(inputValue);
+    if (!inputValue || inputValue === '') {
+      return Report.warning(
+        'Invalid input',
+        'Please enter a valid search query.'
+      );
+    }
     observer.observe(elements.guardJs);
     const { hits, totalHits } = await fetchImages(inputValue);
     Notify.success(`Hooray! We found ${totalHits} images`);
@@ -79,21 +85,21 @@ function createMarkup(arr) {
         comments,
         downloads,
       }) =>
-        `<a class="gallery-link" href=${largeImageURL}>
-             <img class="gallery-image" width="350"src=${webformatURL} alt=${tags} loading="lazy" />
-                   <div class="info-item">
+        `<a class="gallery__link" href=${largeImageURL}>
+             <img class="gallery__image" width="350"src=${webformatURL} alt=${tags} loading="lazy" />
+                   <div class="info__item">
                        <b>Likes</b>
                        ${likes}
                    </div>
-                   <div class="info-item">
+                   <div class="info__item">
                        <b>Views</b>
                        ${views}
                    </div>
-                   <div class="info-item">
+                   <div class="info__item">
                        <b>Comments</b>
                        ${comments}
                    </div>
-                   <div class="info-item">
+                   <div class="info__item">
                        <b>Downloads</b>
                        ${downloads}
                    </div>
@@ -110,11 +116,11 @@ function scrolTop() {
     top: 0,
     behavior: 'smooth',
   });
-  elements.upButton.style.visibility = 'hidden';
+  upButton.style.visibility = 'hidden';
 }
 
 async function handlerPagination(entries, observer) {
-  for (let entry of entries) {
+  for (entry of entries) {
     if (entry.isIntersecting) {
       try {
         page += 1;
