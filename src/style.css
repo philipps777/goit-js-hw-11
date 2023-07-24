@@ -15,24 +15,24 @@
   justify-content: center;
   gap: 20px;
 }
-.gallery__image:hover {
+.gallery-image:hover {
   transform: scale(1.03);
 }
-.gallery__image {
+.gallery-image {
   object-fit: cover;
   transition: transform var(--animation-duration) var(--timing-function);
   cursor: zoom-in;
 }
-.gallery__link {
+.gallery-link {
   display: block;
   text-decoration: none;
   color: #141313;
 }
-.gallery__link:hover {
+.gallery-link:hover {
   color: #d900ff;
 }
 
-.gallery__item {
+.gallery-item {
   display: grid;
 
   align-content: space-between;

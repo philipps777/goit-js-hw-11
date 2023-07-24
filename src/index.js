@@ -53,7 +53,7 @@ async function onFormSubmit(e) {
     e.preventDefault();
     Loading.arrows();
     inputValue = elements.input.value.trim();
-    if (inputValue === '') {
+    if (!inputValue) {
       return Report.warning(
         'Invalid input',
         'Please enter a valid search query.'
@@ -85,21 +85,21 @@ function createMarkup(arr) {
         comments,
         downloads,
       }) =>
-        `<a class="gallery__link" href=${largeImageURL}>
-             <img class="gallery__image" width="350"src=${webformatURL} alt=${tags} loading="lazy" />
-                   <div class="info__item">
+        `<a class="gallery-link" href=${largeImageURL}>
+             <img class="gallery-image" width="350"src=${webformatURL} alt=${tags} loading="lazy" />
+                   <div class="info-item">
                        <b>Likes</b>
                        ${likes}
                    </div>
-                   <div class="info__item">
+                   <div class="info-item">
                        <b>Views</b>
                        ${views}
                    </div>
-                   <div class="info__item">
+                   <div class="info-item">
                        <b>Comments</b>
                        ${comments}
                    </div>
-                   <div class="info__item">
+                   <div class="info-item">
                        <b>Downloads</b>
                        ${downloads}
                    </div>
