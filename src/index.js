@@ -53,12 +53,6 @@ async function onFormSubmit(e) {
     e.preventDefault();
     Loading.arrows();
     inputValue = elements.input.value.trim();
-    if (!inputValue) {
-      return Report.warning(
-        'Invalid input',
-        'Please enter a valid search query.'
-      );
-    }
 
     observer.observe(elements.guardJs);
     const { hits, totalHits } = await fetchImages(inputValue);
