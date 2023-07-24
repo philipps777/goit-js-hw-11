@@ -7,14 +7,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const elements = {
   form: document.querySelector('.search-form'),
-  input: document.querySelector('.input'),
+  input: document.querySelector('input'),
   formContainer: document.querySelector('.gallery'),
   addField: document.querySelector('.submit'),
   upButton: document.querySelector('.round-button'),
   guardJs: document.querySelector('.for-upButton'),
 };
-
-const inputValue = elements.input.value;
 
 const BASE_URL = 'https://pixabay.com/api/';
 
@@ -46,13 +44,15 @@ let observer = new IntersectionObserver(handlerPagination, options);
 
 elements.upButton.addEventListener('click', scrolTop);
 
+let inputValue;
+
 let page = 1;
 
 async function onFormSubmit(e) {
   try {
     e.preventDefault();
     Loading.arrows();
-    inputValue.trim();
+    inputValue = elements.input.value.trim();
 
     observer.observe(elements.guardJs);
     const { hits, totalHits } = await fetchImages(inputValue);
