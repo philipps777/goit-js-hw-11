@@ -44,7 +44,7 @@ let observer = new IntersectionObserver(handlerPagination, options);
 
 elements.upButton.addEventListener('click', scrolTop);
 
-let inputValue;
+let inputValue = '';
 
 let page = 1;
 
@@ -120,7 +120,7 @@ function scrolTop() {
 }
 
 async function handlerPagination(entries, observer) {
-  for (entry of entries) {
+  for (let entry of entries) {
     if (entry.isIntersecting) {
       try {
         page += 1;
