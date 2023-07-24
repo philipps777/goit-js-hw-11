@@ -53,20 +53,19 @@ async function onFormSubmit(e) {
     e.preventDefault();
     Loading.arrows();
     inputValue = elements.input.value.trim();
-    const isValidInput = /^[a-zA-Z0-9\s]+$/.test(inputValue);
-    if (!isValidInput || inputValue === '') {
+    if (inputValue === '') {
       return Report.warning(
         'Invalid input',
         'Please enter a valid search query.'
       );
-    } else {
-      observer.observe(elements.guardJs);
-      const { hits, totalHits } = await fetchImages(inputValue);
-      Notify.success(`Hooray! We found ${totalHits} images`);
-      elements.formContainer.innerHTML = createMarkup(hits);
-      simpleLightbox.refresh();
-      e.target.reset();
     }
+
+    observer.observe(elements.guardJs);
+    const { hits, totalHits } = await fetchImages(inputValue);
+    Notify.success(`Hooray! We found ${totalHits} images`);
+    elements.formContainer.innerHTML = createMarkup(hits);
+    simpleLightbox.refresh();
+    e.target.reset();
   } catch (error) {
     Report.warning('Invalid input', 'Please enter a valid search query.');
     console.log(error);
