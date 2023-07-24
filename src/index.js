@@ -7,7 +7,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const elements = {
   form: document.querySelector('.search-form'),
-  input: document.querySelector('input'),
+  input: document.querySelector('.input'),
   formContainer: document.querySelector('.gallery'),
   addField: document.querySelector('.submit'),
   upButton: document.querySelector('.round-button'),
